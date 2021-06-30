@@ -14,6 +14,8 @@ class Interpreter : public Validator
     public: std::string filePath;
     std::ifstream file;
     std::vector<std::string> text;
+    double money;
+    int rounds;
     std::vector<int> numbers;
 
     Interpreter(std::string filePath);
@@ -22,6 +24,10 @@ class Interpreter : public Validator
      void closeFile();
      void setText();
      std::vector<std::string> getText();
+     void setMoney();
+     double getMoney();
+     void setRounds();
+     int getRounds();
      void setNumbers();
      std::vector<int> getNumbers();
 };

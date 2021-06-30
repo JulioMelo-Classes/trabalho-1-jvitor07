@@ -28,12 +28,29 @@ void Validator::checkNumbersRepetition(std::vector<int> numbers)
     if(repeat == true) throw "Houve repetição de números";
 }
 
-void Validator::checkStrangeCharacter(std::string token)
+void Validator::checkIntegerNumber(std::string token)
 {
     try{
-        int value = std::stoi(token);
-        if(value > 80 || value < 1) throw "Número inválido";
+        std::stoi(token);
     }catch(std::invalid_argument ia){
-        throw "Caracter inválido";
+        throw "Insira um número inteiro";
     }
+}
+
+void Validator::checkRealNumber(std::string token)
+{
+    std::size_t cmp = token.find(".");
+    if(cmp == std::string::npos) throw "Insira um número real";
+}
+
+void Validator::checkNumberInterval(std::string token, int min, int max)
+{
+    int value = std::stoi(token);
+    if(value > max || value < min) throw "Número inválido";
+}
+
+void Validator::checkUniqueNumber(std::string token)
+{
+    std::size_t cmp = token.find(" ");
+    if(cmp != std::string::npos) throw "Escreva apenas um número";
 }
