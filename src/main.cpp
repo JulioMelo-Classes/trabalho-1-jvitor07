@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         }
 
     }catch(const char *msg){
-        cout << msg << endl;
+        cerr << msg << endl;
     }
 
     return 0;

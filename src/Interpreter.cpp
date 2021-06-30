@@ -41,10 +41,13 @@ void Interpreter::setNumbers()
 
     while(getline(check, token, ' '))
     {
+        this->checkStrangeCharacter(token);
         this->numbers.push_back(std::stoi(token));
     }
     
+
     this->checkNumbersAmount(this->numbers);
+    this->checkNumbersRepetition(this->numbers);
 }
 
 std::vector<int>Interpreter::getNumbers()
