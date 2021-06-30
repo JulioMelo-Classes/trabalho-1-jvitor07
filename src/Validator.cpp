@@ -9,5 +9,5 @@ void Validator::checkNumbersAmount(std::vector<int> numbers)
 {
     int amount = numbers.size();
 
-    if(amount < 0 || amount > 14) throw "Quantidade de números invalida";
+    if(amount < 1 || amount > 15) throw "Quantidade de números invalida";
 }

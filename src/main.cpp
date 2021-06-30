@@ -15,8 +15,13 @@ int main(int argc, char *argv[])
         std::vector<std::string> lines = inter->getText();
         inter->setNumbers();
         std::vector<int> numbers = inter->getNumbers();
-        
+        /*
         for(std::vector<std::string>::iterator it = lines.begin(); it != lines.end(); it++)
+        {
+            cout << *it << endl;
+        }
+        */
+        for(std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); it++)
         {
             cout << *it << endl;
         }

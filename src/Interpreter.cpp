@@ -36,16 +36,12 @@ std::vector<std::string> Interpreter::getText()
 void Interpreter::setNumbers()
 {
     std::string strNumbers = this->text.at(2);
-    std::string delimiter = " ";
+    std::stringstream check(strNumbers);
     std::string token;
-    size_t pos = 0;
 
-    while ((pos = strNumbers.find(delimiter)) != std::string::npos) 
+    while(getline(check, token, ' '))
     {
-        token = strNumbers.substr(0, pos);
-        
         this->numbers.push_back(std::stoi(token));
-        strNumbers.erase(0, pos + delimiter.length());
     }
     
     this->checkNumbersAmount(this->numbers);
