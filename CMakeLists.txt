@@ -17,5 +17,7 @@ include_directories( include )
 add_executable( Keno
                 src/Interpreter.cpp
                 src/Validator.cpp
+                src/KenoBet.cpp
+                src/Teller.cpp
                 src/main.cpp )
 # The end

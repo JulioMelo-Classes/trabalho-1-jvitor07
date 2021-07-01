@@ -1,6 +1,5 @@
 {
     "files.associations": {
-        "stdexcept": "cpp",
         "any": "cpp",
         "array": "cpp",
         "atomic": "cpp",
@@ -68,6 +67,7 @@
         "scoped_allocator": "cpp",
         "shared_mutex": "cpp",
         "sstream": "cpp",
+        "stdexcept": "cpp",
         "streambuf": "cpp",
         "thread": "cpp",
         "typeindex": "cpp",
