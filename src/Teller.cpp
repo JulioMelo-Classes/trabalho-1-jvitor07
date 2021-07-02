@@ -25,14 +25,14 @@ void Teller::printTable(std::vector<int> numbers, std::vector<double> tableLine)
     int counter = 0;
     for(std::vector<double>::iterator it = tableLine.begin(); it != tableLine.end(); it++)
     {
-        std::cout << counter << "        | " << *it << std::endl;
+        std::cout << counter << "         | " << *it << std::endl;
         counter++;
     }
     
     std::cout << std::endl <<"------------------------------------------------------------" << std::endl;
 }
 
-void Teller::printRound(double money, int currentRound, int roundTotal, std::vector<int> drawNumbers, std::vector<int> hits, int hitQuantity, int numbersTotal, double multiplier, double result, double total)
+void Teller::printRound(double money, int currentRound, int roundTotal, std::vector<int> drawNumbers)
 {
     std::cout << "Esta é a rodada #" << currentRound << " de " << roundTotal << ", sua aposta é $" << money << ". Boa sorte!" << std::endl;
     std::cout << "Os números sorteados são: [ ";
@@ -42,6 +42,11 @@ void Teller::printRound(double money, int currentRound, int roundTotal, std::vec
     }
     
     std::cout << "]" << std::endl;
+}
+
+void Teller::printRoundResult(std::vector<int> hits, int hitQuantity, int numbersTotal, double multiplier, double result, double total)
+{
+    
     std::cout << "Você acertou os números [ "; 
     for(std::vector<int>::iterator it = hits.begin(); it != hits.end(); it++){
         std::cout << *it << " ";
@@ -68,7 +73,7 @@ void Teller::printSumary(double initialMoney, double finalMoney)
         std::cout << ">>> Que pena, você perdeu tudo, Que azarado ^^." << std::endl;
     }
     else if(finalMoney == initialMoney){
-        std::cout << ">>> Deu na merma! ¯\_(ツ)_/¯" << std::endl;
+        std::cout << ">>> Deu na merma! ¯|_(ツ)_/¯" << std::endl;
     }
 
     std::cout << ">>> Você está saindo do jogo com um total de $" << finalMoney << " créditos." << std::endl;

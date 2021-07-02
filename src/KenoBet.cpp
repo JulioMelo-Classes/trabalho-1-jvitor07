@@ -107,7 +107,7 @@ void KenoBet::play()
     double bet_amount = this->m_wage /this->total_rounds;
 
     this->printHeader(this->get_rounds(), initialMoney, initialMoney / this->get_rounds());
-    //this->printTable(this->get_m_spots(), this->table[this->size()]);
+    this->printTable(this->get_m_spots(), this->table[this->size() - 1]);
     
     while(this->current_round <= this->total_rounds)
     {
@@ -115,11 +115,12 @@ void KenoBet::play()
         this->random_numbers_draw();
         this->set_hits();
         std::vector<int> arrHits = this->get_hits();
-        double multiplier = this->table[this->get_m_spots().size() - 1][this->get_hits_number()];
+        double multiplier = this->table[this->size() - 1][this->get_hits_number()];
         double balance_bet = bet_amount * multiplier;
         this->m_wage += balance_bet;
         
-        this->printRound(initialMoney / this->get_rounds(), this->get_current_round(), this->get_rounds(), this->get_random_numbers(), this->get_hits(), this->get_hits().size(), this->get_m_spots().size(), multiplier, balance_bet, this->get_wage());
+        this->printRound(initialMoney / this->get_rounds(), this->get_current_round(), this->get_rounds(), this->get_random_numbers());
+        this->printRoundResult(arrHits, arrHits.size(), this->get_m_spots().size(), multiplier, balance_bet, this->get_wage());
         
         this->next_round();
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));

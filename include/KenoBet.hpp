@@ -23,7 +23,8 @@ class KenoBet : public Teller
      set_of_numbers_type m_spots;
      set_of_numbers_type random_numbers;
      set_of_numbers_type hits;
-     public: double table[15][16] = {
+     
+     public: std::vector<std::vector<double>> table{
          {0, 3},
          {0, 1, 9},
          {0, 1, 2, 16},
@@ -38,9 +39,8 @@ class KenoBet : public Teller
          {0, 0, 0, 0.5, 1, 2, 4, 24, 72, 250, 500, 2000, 4000},
          {0, 0, 0, 0.5, 0.5, 3, 4, 5, 20, 80, 240, 500, 3000, 6000},
          {0, 0, 0, 0.5, 0.5, 2, 3, 5, 12, 50, 150, 500, 1000, 2000, 7500},
-         {0, 0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000}
-        };
-
+         {0, 0, 0, 0.5, 0.5, 1, 2, 5, 15, 50, 150, 300, 600, 1200, 2500, 10000}};
+         
     public: bool set_wage(cash_type wage_);
      cash_type get_wage();
      void set_rounds(number_type rounds);
