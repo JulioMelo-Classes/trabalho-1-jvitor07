@@ -15,4 +15,4 @@
 > - "./keno ../tests/teste1.txt";
 > - Os arquivos de teste vão de teste1 até teste7;
 ## Principais dificuldades::persevere:
-> - lorem ipsun
+> - Criar arquivos de testes
