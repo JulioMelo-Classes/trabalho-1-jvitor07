@@ -8,7 +8,9 @@
 
 #include "Validator.hpp"
 
-
+/*! 
+ * Classe responsável por entender e validar o arquivo utilizando os metodos do Validator.
+ */
 class Interpreter : public Validator
 {
     public: std::string filePath;

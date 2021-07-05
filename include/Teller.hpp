@@ -5,6 +5,9 @@
 #include <vector>
 #include <iostream>
 
+/*! 
+ * Classe responsável por printar os dados do jogo.
+ */
 class Teller
 {
     protected: void printHeader(int rounds, double totalWage, double roundWage);

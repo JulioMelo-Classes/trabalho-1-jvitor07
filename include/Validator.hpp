@@ -5,6 +5,9 @@
 #include <vector>
 #include <string>
 
+/*! 
+ * Classe que responsável pelos metodos de validação
+ */
 class Validator
 {
     protected: void checkFileExistence(std::ifstream &file); 

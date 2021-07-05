@@ -1,5 +1,11 @@
 #include "Teller.hpp"
 
+/*! 
+ * @param round quantidade total de rounds.
+ * @param totalWage valor total de créditos que será apostado.
+ * @param roundWage valor que será apostador em cada round.
+ * @return void
+ */
 void Teller::printHeader(int rounds, double totalWage, double roundWage)
 {
     std::cout << ">>> Aposta lida com sucesso!" << std::endl;
@@ -8,6 +14,11 @@ void Teller::printHeader(int rounds, double totalWage, double roundWage)
     std::cout << "Jogará um total de " << rounds << " rodadas, apostando $" << roundWage << " créditos por rodada" << std::endl << std::endl;
 }
 
+/*! 
+ * @param tableLine linha da tabela da quantidade de números que o jogador escolheu.
+ * @param numbers vetor de números escolhidos pelo jogador.
+ * @return void
+ */
 void Teller::printTable(std::vector<int> numbers, std::vector<double> tableLine)
 {
     std::cout << "Sua aposta tem " << numbers.size() << " números, eles são: [ ";
@@ -32,6 +43,13 @@ void Teller::printTable(std::vector<int> numbers, std::vector<double> tableLine)
     std::cout << std::endl <<"------------------------------------------------------------" << std::endl;
 }
 
+/*! 
+ * @param money valor total de créditos no final da rodada.
+ * @param currentRound rodada atual da partida.
+ * @param roundTotal quantidade total de rodadas.
+ * @param drawNumbers vetor de números sorteados.
+ * @return void
+ */
 void Teller::printRound(double money, int currentRound, int roundTotal, std::vector<int> drawNumbers)
 {
     std::cout << "Esta é a rodada #" << currentRound << " de " << roundTotal << ", sua aposta é $" << money << ". Boa sorte!" << std::endl;
@@ -44,6 +62,15 @@ void Teller::printRound(double money, int currentRound, int roundTotal, std::vec
     std::cout << "]" << std::endl;
 }
 
+/*! 
+ * @param hit vetor de inteiros que representa os valores que o jogador escolheu e foram sorteados. 
+ * @param hiQuantity valor que representa quantidade dos valores que o jogador escolheu e foram sorteados. 
+ * @param numbersTotal quantidade de números que o jogador escolheu.
+ * @param multiplier taxa de retorno da premiação.
+ * @param result valor de créditos ganho na rodada.
+ * @param total valor total de créditos no final da rodada.
+ * @return void
+ */
 void Teller::printRoundResult(std::vector<int> hits, int hitQuantity, int numbersTotal, double multiplier, double result, double total)
 {
     
@@ -57,6 +84,11 @@ void Teller::printRoundResult(std::vector<int> hits, int hitQuantity, int number
     std::cout << " ------------------------------------------------------------" << std::endl;
 }
 
+/*! 
+ * @param initialMoney valor que representa a quantidade inicial de crédito que o jogador possui.
+ * @param finalMoney valor que representa a quantidade final de crédito que o jogador possui.
+ * @return void
+ */
 void Teller::printSumary(double initialMoney, double finalMoney)
 {
     std::cout << ">>> Fim das rodadas!" << std::endl << std::endl;

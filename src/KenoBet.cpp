@@ -2,11 +2,19 @@
 
 #include <iostream>
 
+/*! 
+ * Retorna o valor que o jogador possui na carteira.
+ * @return this->m_wage quantidade créditos.
+ */
 cash_type KenoBet::get_wage()
 {
     return this->m_wage;
 }
 
+/*! 
+ * @param wage_ quantidade de créditos.
+ * @return bool validação pra saber se há créditos na carteira 
+ */
 bool KenoBet::set_wage(cash_type wage_)
 {
     this->m_wage = wage_;
@@ -14,36 +22,64 @@ bool KenoBet::set_wage(cash_type wage_)
     return this->m_wage > 0 ? true : false;
 }
 
+/*! 
+ * Retorna a quantidade de rounds.
+ * @return this->total_rounds quantidade de rounds.
+ */
 number_type KenoBet::get_rounds()
 {
     return this->total_rounds;
 }
 
+/*! 
+ * Atribui a quantidade de rounds.
+ * @return void.
+ */
 void KenoBet::set_rounds(number_type rounds)
 {
     this->total_rounds = rounds;
 }
 
+/*! 
+ * Retorna o round atual.
+ * @return this->current_round round atual.
+ */
 number_type KenoBet::get_current_round()
 {
     return this->current_round;
 }
 
+/*! 
+ * Incrementa +1 no round atual.
+ * @return void.
+ */
 void KenoBet::next_round()
 {
     this->current_round += 1;
 }
 
+/*! 
+ * Retorna os números selecionados pelo jogador.
+ * @return this->m_spots número selecionados pelo jogador.
+ */
 set_of_numbers_type KenoBet::get_m_spots()
 {
     return this->m_spots;
 }
 
+/*! 
+ * Atribui os números selecionados pelo jogador.
+ * @return void.
+ */
 void KenoBet::set_m_spots(set_of_numbers_type numbers)
 {
     this->m_spots = numbers;
 }
 
+/*! 
+ * Gera os números da rodada.
+ * @return void.
+ */
 void KenoBet::random_numbers_draw()
 {
     this->random_numbers.clear();
@@ -63,11 +99,19 @@ void KenoBet::random_numbers_draw()
     }
 }
 
+/*! 
+ * Atribui os números gerados da rodada.
+ * @return this->random_numbers retorna o vetor de números gerados.
+ */
 set_of_numbers_type KenoBet::get_random_numbers()
 {
     return this->random_numbers;
 }
 
+/*! 
+ * Verifica quais números sorteados o jogador acertou.
+ * @return void.
+ */
 void KenoBet::set_hits()
 {
     this->hits.clear();
@@ -80,27 +124,47 @@ void KenoBet::set_hits()
     }
 }
 
+/*! 
+ * Retorna um vetor com os acertos do jogador
+ * @return this->hits vetor com números que o jogador acertou
+ */
 set_of_numbers_type KenoBet::get_hits()
 {
     return this->hits;
 }
 
+/*! 
+ * Retorna a quantidade de números que o jogador acertou
+ * @return this->hits.size() quantidade de números que o jogador acertou
+ */
 number_type KenoBet::get_hits_number()
 {
     return this->hits.size();
 }
 
+/*! 
+ * Retorna o tamanho do jogo do jogador
+ * @return this->m_spots.size() quantidade de números que o jogador escolheu
+ */
 size_t KenoBet::size(void) const
 {
     return this->m_spots.size();
 }
 
+/*! 
+ * Reseta o jogo para o valor inicial
+ * @return void
+ */
 void KenoBet::reset(void)
 {
     this->m_wage = 0;
     this->m_spots.clear();
 }
 
+/*! 
+ * Executa a rotina do jogo, printando os dados e os resultados
+ * @return void
+ */
 void KenoBet::play()
 {
     double initialMoney = this->get_wage();

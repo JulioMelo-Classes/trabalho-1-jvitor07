@@ -14,7 +14,9 @@ using number_type = int;
 using cash_type = double; 
 using set_of_numbers_type = std::vector<number_type>;
 
-
+/*! 
+ * Classe responsável por executar o jogo
+ */
 class KenoBet : public Teller
 {
     private: cash_type m_wage = 0;
