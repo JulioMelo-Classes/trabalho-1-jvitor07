@@ -11,5 +11,8 @@
 > - Ainda na pasta bin rode o comando "./keno [localização do arquivo]";
 ## Exemplo de uso::nerd_face:
 > - "./keno ../data.txt";
+## Como executar testes? 🧪
+> - "./keno ../tests/teste1.txt";
+> - Os arquivos de teste vão de teste1 até teste7;
 ## Principais dificuldades::persevere:
 > - lorem ipsun
