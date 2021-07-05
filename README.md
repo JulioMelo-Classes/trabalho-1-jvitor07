@@ -2,7 +2,7 @@
 ## O que é? :thinking:
 > O Keno é um jogo de loteria muito popular nos casinos modernos, e utilizado igualmente nas loterias estatais.
 > O jogador seleciona 15 números entre 1 e 80 e vai ser executadas x rodadas sorteando 20 números.
-## Como compilar?:confused::thinking:
+## Como compilar?:thinking::memo:
 > - Clone este projeto;
 > - Entre pelo terminal na pasta bin;
 > - Execute o comando "cmake ..";
